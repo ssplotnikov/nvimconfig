@@ -110,4 +110,5 @@ return require("packer").startup(function(use)
             require("lspsaga").setup({})
         end,
     })
+    use('MunifTanjim/prettier.nvim')
 end)
