@@ -6,6 +6,11 @@ vim.cmd.packadd("packer.nvim")
 return require("packer").startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
+    -- use({
+    --     "williamboman/mason.nvim",
+    --     "williamboman/mason-lspconfig.nvim",
+    --     "neovim/nvim-lspconfig",
+    -- })
 
     use({
         "nvim-telescope/telescope.nvim",
@@ -41,7 +46,7 @@ return require("packer").startup(function(use)
             ts_update()
         end,
     })
-    use("nvim-treesitter/playground")
+    -- use("nvim-treesitter/playground")
     use("theprimeagen/harpoon")
     use("theprimeagen/refactoring.nvim")
     use("mbbill/undotree")
@@ -49,11 +54,24 @@ return require("packer").startup(function(use)
     use("nvim-treesitter/nvim-treesitter-context")
     use({
         "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-            require("null-ls").setup()
-        end,
+        -- config = function()
+        --     require("null-ls").setup()
+        -- end,
         requires = { "nvim-lua/plenary.nvim" },
     })
+    -- use(
+    --
+    --     { "hrsh7th/nvim-cmp" },
+    --     { "hrsh7th/cmp-buffer" },
+    --     { "hrsh7th/cmp-path" },
+    --     { "saadparwaiz1/cmp_luasnip" },
+    --     { "hrsh7th/cmp-nvim-lsp" },
+    --     { "hrsh7th/cmp-nvim-lua" },
+    --
+    --     -- Snippets
+    --     { "L3MON4D3/LuaSnip" },
+    --     { "rafamadriz/friendly-snippets" }
+    -- )
 
     use({
         "VonHeikemen/lsp-zero.nvim",
@@ -77,6 +95,16 @@ return require("packer").startup(function(use)
             { "rafamadriz/friendly-snippets" },
         },
     })
+    --     use(
+    --
+    --     {
+    -- "jay-babu/mason-null-ls.nvim",
+    --     requires = {
+    --       "williamboman/mason.nvim",
+    --       "jose-elias-alvarez/null-ls.nvim",
+    --     },
+    --     }
+    --     )
     --
     use({
         "numToStr/Comment.nvim",
@@ -84,13 +112,13 @@ return require("packer").startup(function(use)
             require("Comment").setup()
         end,
     })
-    use({
-        "akinsho/git-conflict.nvim",
-        tag = "*",
-        config = function()
-            require("git-conflict").setup()
-        end,
-    })
+    -- use({
+    --     "akinsho/git-conflict.nvim",
+    --     tag = "*",
+    --     config = function()
+    --         require("git-conflict").setup()
+    --     end,
+    -- })
     use({
         "windwp/nvim-autopairs",
         config = function()
@@ -110,5 +138,5 @@ return require("packer").startup(function(use)
             require("lspsaga").setup({})
         end,
     })
-    use('MunifTanjim/prettier.nvim')
+    -- use('MunifTanjim/prettier.nvim')
 end)
